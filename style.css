@@ -1,0 +1,169 @@
+html {
+    line-height: 1.15; 
+    -webkit-text-size-adjust: 100%; 
+  }
+
+  body {
+    margin: 0;
+  }
+ 
+  button, input, select, textarea {
+    font-family: inherit;
+  }
+  
+  button, input {
+    overflow: hidden;
+  }
+  input{
+    padding: 0.3rem;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.664);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  input:focus{
+    outline: none;
+  }
+  button, select {
+    text-transform: none;
+  }
+  ul, ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  blockquote, dl, dd, h1, h2, h3, h4, h5, h6, figure, p, pre {
+    margin: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.15;
+  }
+  button, select, textarea {
+    margin: 0;
+    font-size: 100%;
+    display: block;
+    border: none;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+a,button{
+      cursor: pointer;
+      margin: auto;
+      padding: 0.5rem;
+      background: rgb(32, 130, 241);
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .link{
+      text-decoration: none;
+      background-color: transparent;
+    }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-style: none;
+    display: block;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  ul ul, ol ul, ul ol, ol ol {
+    list-style: none;
+  }
+  li {
+    padding: 0.3rem;
+  }
+
+  h3{
+    background-color: rgb(32, 130, 241);
+    color:#fff;
+    text-align: center;
+    padding: 0.3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.main_wrapper{
+    position: relative;
+    width: 80svw;
+    margin: 3rem auto;
+    background-color: #f2f2f2;
+    color:#fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+form{
+    width:25%;
+    max-width: 15rem;
+    border-right: 3px solid rgba(0, 0, 0, 0.253);
+    padding-inline: 0.5rem;
+}
+ol li{
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin: 0.5rem auto;
+    cursor: pointer;
+    background-color:rgb(32, 130, 241);
+    color: #ffffff;
+}
+ol .items:hover
+{
+    background-color:rgb(115, 174, 255);
+}
+select{
+  outline: none;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  color:#fff
+}
+option{
+    width: 100%;
+    color:rgb(0, 0, 0);
+    background-color: rgb(221, 218, 214);
+}
+.content{
+    width: 75%; 
+    min-width: 30rem;
+    height:100% ;
+    padding: 0.5rem;
+    color:rgba(0, 0, 0, 0.664);
+    overflow-y: scroll;
+}
+a#logout{
+  position: fixed;
+  top:1rem;
+  background-color: red;
+  right:1rem;
+}
+.items input[type="submit"]{
+  background-color: transparent;
+  font-weight: bolder;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.tabselection{
+  border:1px solid rgba(0, 0, 0, 0.253);
+}
