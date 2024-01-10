@@ -23,11 +23,11 @@ include "credentials.php";
     
 
     echo "<br><h2>Delete Table</h2>";
-    echo "<form method='post' action='' style='width:100%;max-width:100%; margin-left:0; padding-left:0;'>
+    echo "<form method='post' action='' style='width:100%; max-width:100%; margin-left:0; padding-left:0;'>
         <h2>Are you want to sure to delete? ".$_GET['tablename']."</h2>";
-    echo '<div style="justify-content:flex; flex-direction:row;">
-            <input type="submit" value="YES" style="background-color:red; color:white;">
-            <input type="submit" value="NO" >
-        </div>
+    echo '
+            <input type="submit" name="YES" value="YES" id="qrysubmit" style="background-color:red; margin-top:0.5rem;">
+            <input type="submit" name="NO" value="NO" id="qrysubmit">
+        
     </form>';
 ?>

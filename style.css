@@ -5,6 +5,7 @@ html {
 
   body {
     margin: 0;
+    background-color: #f3ce8a;
   }
  
   button, input, select, textarea {
@@ -102,6 +103,7 @@ table, th, td {
     width: 80svw;
     margin: 3rem auto;
     background-color: #f2f2f2;
+    border-radius: 10px;
     color:#fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -149,11 +151,16 @@ option{
     color:rgba(0, 0, 0, 0.664);
     overflow-y: scroll;
 }
-a#logout{
+#logout{
   position: fixed;
   top:1rem;
   background-color: red;
   right:1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bolder;
 }
 .items input[type="submit"]{
   background-color: transparent;
@@ -165,5 +172,22 @@ a#logout{
 }
 
 .tabselection{
-  border:1px solid rgba(0, 0, 0, 0.253);
+  border-bottom:1px solid rgba(0, 0, 0, 0.253);
+  padding-bottom: 3px;
+}
+
+#qrysubmit{
+  background-color: rgb(32, 130, 241);
+  padding: 0.8rem 1rem;
+  font-weight: bolder;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+}
+
+#qrysubmit:hover{
+  background-color: rgb(115, 174, 255);
 }
