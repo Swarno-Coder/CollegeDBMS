@@ -12,16 +12,15 @@ include "credentials.php";
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["YES"])) {
         // Delete the table
         $sql = 'DROP TABLE '.$_GET["tablename"];
-        if ($conn->query($sql) === TRUE) {
-            echo "Table ".$_GET['tablename']." deleted successfully.";
-        } else {
-            echo "Error deleting table: " . $conn->error;
+        try{
+            $res=$conn->query($sql);
+            $conn->close();
+            header("Location: " . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/main.php?message=success&msg=Table%20".$_GET['tablename']."%20deleted%20successfully&tablename=".$_GET["tablename"]."");
+        }
+        catch(Exception $e){
+            header("Location: " . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/main.php?message=failed&err=".$e->getMessage());
         }
     }
-    // Close the database connection
-    $conn->close();
-    
-
     echo "<br><h2>Delete Table</h2>";
     echo "<form method='post' action='' style='width:100%; max-width:100%; margin-left:0; padding-left:0;'>
         <h2>Are you want to sure to delete? ".$_GET['tablename']."</h2>";

@@ -2,10 +2,18 @@ html {
     line-height: 1.15; 
     -webkit-text-size-adjust: 100%; 
   }
+  :root {
+    --primary-color: #573cfa;
+    --primary-color-light: #7c5ffa;
+    --secondary-color: #fb8d1a;
+    --success: #02864a;
+    --danger: #e8083e;
+    --natural: #1c1a27;
+  }
 
   body {
     margin: 0;
-    background-color: #f3ce8a;
+    background-color: var(--secondary-color);
   }
  
   button, input, select, textarea {
@@ -53,7 +61,7 @@ a,button{
       cursor: pointer;
       margin: auto;
       padding: 0.5rem;
-      background: rgb(32, 130, 241);
+      background: var(--primary-color);
       color: #fff;
       border-radius: 5px;
     }
@@ -88,14 +96,15 @@ a,button{
   }
 
   h3{
-    background-color: rgb(32, 130, 241);
+    /* background-color: rgb(32, 130, 241); */
+    background-color: var(--primary-color);
     color:#fff;
     text-align: center;
     padding: 0.3rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid var(--natural);
   border-collapse: collapse;
 }
 .main_wrapper{
@@ -114,7 +123,7 @@ table, th, td {
     justify-content: space-around;
 }
 form{
-    width:25%;
+    width:100%;
     max-width: 15rem;
     border-right: 3px solid rgba(0, 0, 0, 0.253);
     padding-inline: 0.5rem;
@@ -124,12 +133,12 @@ ol li{
     border-radius: 5px;
     margin: 0.5rem auto;
     cursor: pointer;
-    background-color:rgb(32, 130, 241);
+    background-color:var(--primary-color);
     color: #ffffff;
 }
 ol .items:hover
 {
-    background-color:rgb(115, 174, 255);
+    background-color:var(--primary-color-light);
 }
 select{
   outline: none;
@@ -154,7 +163,7 @@ option{
 #logout{
   position: fixed;
   top:1rem;
-  background-color: red;
+  background-color: var(--danger);
   right:1rem;
   padding: 0.8rem 1rem;
   border-radius: 10px;
@@ -177,7 +186,7 @@ option{
 }
 
 #qrysubmit{
-  background-color: rgb(32, 130, 241);
+  background-color: var(--primary-color);
   padding: 0.8rem 1rem;
   font-weight: bolder;
   color: #ffffff;
@@ -189,5 +198,5 @@ option{
 }
 
 #qrysubmit:hover{
-  background-color: rgb(115, 174, 255);
+  background-color: var(--primary-color-light);
 }

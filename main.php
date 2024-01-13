@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>COLLEGE DATABASE ACCESS PORTAL</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,17 +26,20 @@
         </form>
         <div class="content" >
             <?php
-            if (isset($_GET['tablename'])){
+            if (isset($_GET['tablename']) && !isset($_GET['create'])){
                 echo "<h1 class='tabselection'>Table Selected: ".$_GET["tablename"]."</h1>";
             }
+            elseif(isset($_GET['create'])){}
             else{echo "<h1>No Table Selected Please select one from dropdown menu on the left.</h1>";}
+
             if(isset($_GET['message']) && $_GET['message'] == 'success'){
-                echo "<p style='color:green'>".$_GET['msg']."</p>";
+                echo "<p style='color:var(--success)'>".$_GET['msg']."</p>";
             }
             elseif(isset($_GET['message']) && $_GET['message'] == 'failed'){
-                echo "<p style='color:red'> error while executing the query ".$_GET['err']."</p>";
+                echo "<p style='color:var(--danger)'> error while executing the query ".$_GET['err']."</p>";
             }
-            elseif(isset($_GET['tablename']) && $_GET['tablename'] != '' && isset($_GET['create'])){
+            elseif(isset($_GET['create'])){
+                echo "<h1 class='tabselection'>Create Table:";
                 include "create_table.php";
             }
             elseif(isset($_GET['tablename']) && $_GET['tablename'] != '' && isset($_GET['delete'])){
