@@ -15,7 +15,7 @@ include "credentials.php";
         try{
             $res=$conn->query($sql);
             $conn->close();
-            header("Location: " . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/main.php?message=success&msg=Table%20".$_GET['tablename']."%20deleted%20successfully&tablename=".$_GET["tablename"]."");
+            header("Location: " . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/main.php?message=success&msg=Table%20".$_GET['tablename']."%20deleted%20successfully");
         }
         catch(Exception $e){
             header("Location: " . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/main.php?message=failed&err=".$e->getMessage());
