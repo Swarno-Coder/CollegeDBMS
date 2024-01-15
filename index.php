@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: "Roboto";
-            background-color: #4274ff;
+            background-color: #573cfa;
             margin: 0;
             display: flex;
             align-items: center;
@@ -52,7 +52,7 @@
         }
         
         .login-btn {
-            background-color: #1aec21d2;
+            background-color: #11e618d2;
             font-weight: bolder;
             color: #fff;
             width: 100%;
@@ -71,7 +71,7 @@
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <form action="./login.php" method="post">
+        <form action="" method="post">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required placeholder="Enter the username...">
@@ -81,9 +81,20 @@
                 <input type="password" id="password" name="password" required placeholder="Enter the password...">
             </div>
             <?php 
-                if(isset($_GET["error"]))
-                {
-                    echo $_GET["error"];
+            include "credentials.php";
+            $_SESSION['logined']=false;
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    if ($username === $correctUsername && $password === $correctPassword) {
+                        $_SESSION['username'] = $username;
+                        $_SESSION['logined']=true;
+                        session_start();
+                        header('Location: main.php');
+                        exit();
+                    } else {
+                        echo "<p color='red'>Invalid username or password</p>";
+                    }
                 }
             ?>
             <button type="submit" class="login-btn" name="login">Login</button>

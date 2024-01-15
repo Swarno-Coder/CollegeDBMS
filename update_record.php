@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["updateqry"])) {
         }
         elseif (isset($_POST[$row["COLUMN_NAME"]]) && $_POST[$row["COLUMN_NAME"]] !== ""){
             if (is_string($_POST[$row["COLUMN_NAME"]])) {
-                $columns[] = '`'.$row["COLUMN_NAME"].'`="'. $_POST[$row["COLUMN_NAME"]] .'"'; 
+                $columns[] = '`'.$row["COLUMN_NAME"].'`="'. strtoupper($_POST[$row["COLUMN_NAME"]]) .'"'; 
             } elseif (is_numeric($_POST[$row["COLUMN_NAME"]])) {
                 $columns[] = "`".$row["COLUMN_NAME"]."`=".$_POST[$row["COLUMN_NAME"]]; 
             }else{
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["updateqry"])) {
     echo $sql;
 
     try{
-        $res=mysqli_query($conn,$sql);
+        $res=mysqli_query($conn, $sql);
         mysqli_close($conn);
         header("Location: " . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/main.php?message=success&msg=Record%20Updated%20Successfully&tablename=".$_GET["tablename"]."");
     }

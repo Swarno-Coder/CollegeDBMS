@@ -26,6 +26,9 @@
         </form>
         <div class="content" >
             <?php
+            if ($_SESSION['logined']=false){
+                header("Location: " . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/index.php");
+            }
             if (isset($_GET['tablename']) && !isset($_GET['create'])){
                 echo "<h1 class='tabselection'>Table Selected: ".$_GET["tablename"]."</h1>";
             }
