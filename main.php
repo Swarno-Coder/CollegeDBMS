@@ -26,7 +26,8 @@
         </form>
         <div class="content" >
             <?php
-            if ($_SESSION['logined']=false){
+            session_start();
+            if (!isset($_SESSION['logined']) || $_SESSION['logined'] != 'true'){
                 header("Location: " . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/index.php");
             }
             if (isset($_GET['tablename']) && !isset($_GET['create'])){
